@@ -142,7 +142,7 @@
 		<CMD cmd="xml = file.read(url)" />
 		<CMD cmd="overview = xpath.evaluateEx(xml, '/result/msgTyp/text()')" /> -->
         	<CMD cmd="overview = xpath.evaluateEx('http://apps.univera.com/main/LoginAuto.aspx', '/result/msgType/text()')" /> 
-		<CMD cmd="device.toastPopup('[ '+overview+' ]')">
+		<CMD cmd="device.toastPopup('[ '+overview+' ]')" />
 	</FUNCTION>
 
 </MOML>
