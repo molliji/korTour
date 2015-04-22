@@ -138,8 +138,10 @@
 	</FUNCTION>
 	
         <FUNCTION id="function_webservicecall(a)">
-	 
-		<CMD cmd="overview = xpath.evaluateEx('http://apps.univera.com/main/LoginAuto.aspx', '/result/msgType/text()')" />
+	 <CMD cmd="url = 'http://apps.univera.com/main/LoginAuto.aspx?' + userVariable.commonParam"/>
+		<CMD cmd="xml = file.read(url)" />
+		<CMD cmd="overview = xpath.evaluateEx(xml, '/result/msgTyp/text()')" />
+	<!--	<CMD cmd="overview = xpath.evaluateEx('http://apps.univera.com/main/LoginAuto.aspx', '/result/msgType/text()')" /> -->
 		<CMD cmd="device.log('[ '+overview+' ]')">
 	</FUNCTION>
 
