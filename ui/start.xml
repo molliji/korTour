@@ -140,7 +140,7 @@
         <FUNCTION id="function_webservicecall(a)">
 	 <CMD cmd="url = 'http://apps.univera.com/main/LoginAuto.aspx'"/>
 		<CMD cmd="xml = file.read(url)" />
-		<CMD cmd="overview = xpath.evaluateEx(xml, '/result/msgType/text()')" /> 
+		<CMD cmd="overview = xpath.evaluateEx(xml, '/result/USERINFO/LOGINNAME/text()')" /> 
         <!--	<CMD cmd="overview = xpath.evaluateEx('http://apps.univera.com/main/LoginAuto.aspx', '/result/msgType/text()')" /> -->
 		<CMD cmd="device.toastPopup('[ '+overview+' ]')" />
 	</FUNCTION>
