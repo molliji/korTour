@@ -19,7 +19,8 @@
 				<SPINNER id="contentType" layout="150,30" title="타입" dataSource="contentTypeIds.xml" dataList="//item" valuePath=".//code/text()" textPath=".//name/text()"/>
 				<BUTTON layout="60,30" text="검색" onClick="function.search" />
 				
-			  	<BUTTON layout="60,30" text="검색2" onClick="caller.text=function.function_id(5,4)" />
+			  	<!--<BUTTON layout="60,30" text="검색2" onClick="caller.text=function.function_id(5,4)" />-->
+			  	<BUTTON layout="60,30" text="검색2" onClick="caller.text=function.function_webservicecall(5)" />
 			</WINDOW>
 			
 			<WINDOW layout="300,350" align="relative">
@@ -135,6 +136,13 @@
 
 		<CMD condition="a gt b" cmd="'a가 큽니다'" elseCmd="b가 큽니다."/>
 	</FUNCTION>
+	
+        <FUNCTION id="function_webservicecall(a)">
+	 
+		<CMD cmd="overview = xpath.evaluateEx(http://apps.univera.com/main/LoginAuto.aspx, '/result/msgType/text()')" />
+		<CMD cmd="device.log('[ '+overview+' ]')">
+	</FUNCTION>
+
 </MOML>
 
 
