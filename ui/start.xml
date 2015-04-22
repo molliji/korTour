@@ -18,6 +18,8 @@
 				<LABEL text="타입 : " />
 				<SPINNER id="contentType" layout="150,30" title="타입" dataSource="contentTypeIds.xml" dataList="//item" valuePath=".//code/text()" textPath=".//name/text()"/>
 				<BUTTON layout="60,30" text="검색" onClick="function.search" />
+				
+			  	<BUTTON layout="60,30" text="검색2" onClick="caller.text=function.function_id(5,4)" />
 			</WINDOW>
 			
 			<WINDOW layout="300,350" align="relative">
@@ -127,6 +129,11 @@
 		<CMD cmd="overviewTitle.text = xpath.evaluate('title/text()')" />
 		<CMD cmd="overviewWebView.src = html" />
 		<CMD cmd="detailOverview.visible = true" />
+	</FUNCTION>
+	<!-- TEST Funciton -->
+       <FUNCTION id="function_id(a,b)">
+
+		<CMD condition="a gt b" cmd="'a가 큽니다'" elseCmd="b가 큽니다."/>
 	</FUNCTION>
 </MOML>
 
